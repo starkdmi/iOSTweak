@@ -15,7 +15,7 @@ To start developing tweaks follow the next steps:
 - After you have received a message that everything is "Done." go to the project folder using "cd /home/username/tweakname" command
 ![](temp/4.jpg?raw=true "Go to project folder")
 - Now you need to fix paths of Makefile. This is not a required step, but on my computer without it the project did not compile. You can use [Nano](https://en.wikipedia.org/wiki/Nano) or find file in Explorer and change it by notepad. This is what the Makefile looks like
-```
+```Makefile
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = iostweak
@@ -27,11 +27,11 @@ after-install::
 	install.exec "killall -9 SpringBoard"
 ```
 Replace $(THEOS) with "/opt/theos" and $(THEOS_MAKE_PATH) with "/opt/theos/makefiles". Also, I suggest adding the following line to the end of the file 
-```
+```Makefile
 install.exec "uicache"
 ```
 Now Makefile looks like this
-```
+```Makefile
 include /opt/theos/makefiles/common.mk
 
 TWEAK_NAME = iostweak
@@ -44,11 +44,11 @@ after-install::
 	install.exec "uicache"
 ```
 If you plan to use Frameworks in your code then append next line to Makefile. I'll use UIKit
-```
+```Makefile
 iostweak_FRAMEWORKS = UIKit
 ```
 As a result, we get the following file
-```
+```Makefile
 include /opt/theos/makefiles/common.mk
 
 TWEAK_NAME = iostweak
@@ -67,13 +67,13 @@ after-install::
 Replace $(THEOS) with "/opt/theos" and $(THEOS_MAKE_PATH) with "/opt/theos/makefiles". Now Makefile looks like this
 ![](temp/6.jpg?raw=true "Fix Makefile")
 Also, I suggest adding the following line to the end of the file 
-```
+```Makefile
 install.exec "uicache"
 ```
 And in the end we get the following view
 ![](temp/7.jpg?raw=true "Makefile finish")
 If you plan to use Frameworks in your code then append next line to Makefile. I'll use UIKit
-```
+```Makefile
 tweakname_FRAMEWORKS = UIKit
 ```
 ![](temp/8.jpg?raw=true "Frameworks") 
