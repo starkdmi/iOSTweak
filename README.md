@@ -1,3 +1,7 @@
+- Добавить код приложения (Tweak.xm)
+- Выложить все файлы приложения
+
+
 # Writing iOS tweak on Windows using Theos
 
 First of all you need an Ubuntu emulator. You can download it from Microsoft Store by this [link](https://www.microsoft.com/store/productId/9NBLGGH4MSV6).
