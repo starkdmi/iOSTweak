@@ -9,11 +9,10 @@ To start developing tweaks follow the next steps:
 ```Bash
 sudo -i
 ```
-- Next, go to the user directory
+- Next, go to the user directory (username is your PC user name)
 ```
 cd /home/username
 ```
-where "username" is your PC user name
 - To launch a development tool type "theos". If you see a message "command not found" then use an absolute link to app "/opt/theos/bin/nic.pl". After the application is launched, you see a list of templates for development. Choose the item "iphone/tweak" and write it number
 ![](temp/2.jpg?raw=true "Launch development tool")
 - Next, you need to provide information about your tweak. Of the required here is only the name. To skip any of the items, press Enter
