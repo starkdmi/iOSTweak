@@ -15,7 +15,47 @@ To start developing tweaks follow the next steps:
 - After you have received a message that everything is "Done." go to the project folder using "cd /home/username/tweakname" command
 ![](temp/4.jpg?raw=true "Go to project folder")
 - Now you need to fix paths of Makefile. This is not a required step, but on my computer without it the project did not compile. You can use [Nano](https://en.wikipedia.org/wiki/Nano) or find file in Explorer and change it by notepad
+```
+include $(THEOS)/makefiles/common.mk
 
+TWEAK_NAME = iostweak
+iostweak_FILES = Tweak.xm
+
+include $(THEOS_MAKE_PATH)/tweak.mk
+
+after-install::
+	install.exec "killall -9 SpringBoard"
+```
+Replace $(THEOS) with "/opt/theos" and $(THEOS_MAKE_PATH) with "/opt/theos/makefiles". Also, I suggest adding the following line to the end of the file 
+```
+install.exec "uicache"
+```
+Now Makefile looks like this
+```
+include /opt/theos/makefiles/common.mk
+
+TWEAK_NAME = iostweak
+iostweak_FILES = Tweak.xm
+
+include /opt/theos/makefiles/tweak.mk
+
+after-install::
+	install.exec "killall -9 SpringBoard"
+```
+If you plan to use Frameworks in your code then append next line to Makefile. I'll use UIKit
+```
+include /opt/theos/makefiles/common.mk
+
+TWEAK_NAME = iostweak
+iostweak_FILES = Tweak.xm
+iostweak_FRAMEWORKS = UIKit
+
+include /opt/theos/makefiles/tweak.mk
+
+after-install::
+	install.exec "killall -9 SpringBoard"
+	install.exec "uicache"
+```
 
 <!--- 
 ![](temp/5.jpg?raw=true "Open Makefile")
@@ -33,6 +73,6 @@ tweakname_FRAMEWORKS = UIKit
 ```
 ![](temp/8.jpg?raw=true "Frameworks") 
 --->
-- 
+
 
 
