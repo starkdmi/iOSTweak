@@ -86,6 +86,31 @@ tweakname_FRAMEWORKS = UIKit
 ![](temp/8.jpg?raw=true "Frameworks") 
 --->
 
-7) next
+7) Execute the following command
+```
+make clean
+```
+8) Build our tweak
+```
+sudo make package
+```
+9) Now we can found .deb file in /packages folder. Transfer it to your device to /var/root folder. You can use [3uTools](http://www.3u.com/)
+10) Now we need to launch mobile terminal
+11) Execute the following command. Login is "root", password is "alpine"
+```
+login
+```
+12) Install a package on your device. "filename" is your .deb file name
+```
+dpkg -i filename.deb
+```
+13) Open one more window in terminal and execute
+```
+uicache
+```
+14) Go back to the previous window and on behalf of the superuser run
+```
+reboot
+```
 
-
+All Done.
