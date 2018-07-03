@@ -22,8 +22,11 @@ Also, I suggest adding the following line to the end of the file
 ```
 install.exec "uicache"
 ```
-![](temp/7.jpg?raw=true "")
-
-
-if you plan to use Frameworks in your code then append next line to Makefile
+And in the end we get the following view
+![](temp/7.jpg?raw=true "Makefile finish")
+If you plan to use Frameworks in your code then append next line to Makefile. I'll use UIKit
+```
+tweakname_FRAMEWORKS = UIKit
+```
 ![](temp/8.jpg?raw=true "Frameworks")
+- 
