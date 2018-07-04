@@ -18,7 +18,15 @@ sudo -i
 ```
 cd /home/username
 ```
-3) To launch a development tool type "theos". If you see a message "command not found" then use an absolute link to app "/opt/theos/bin/nic.pl". After the application is launched, you see a list of templates for development. Choose the item "iphone/tweak" and write it number<br/>
+3) To launch a development tool type
+```
+theos
+```
+If you see a message "command not found" then use an absolute link to app 
+```
+/opt/theos/bin/nic.pl
+```
+After the application is launched, you see a list of templates for development. Choose the item "iphone/tweak" and write it number<br/>
 ![](temp/2.jpg?raw=true "Launch development tool")
 4) Next, you need to provide information about your tweak. Of the required here is only the name. To skip any of the items, press Enter<br/>
 ![](temp/3.jpg?raw=true "Provide information about the tweak")
