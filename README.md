@@ -117,7 +117,7 @@ login
 ```
 dpkg -i filename.deb
 ```
-13) Open one more window in terminal and execute
+13) Open one more window in terminal and execute (if you missed it in paragraph 6)
 ```
 uicache
 ```
