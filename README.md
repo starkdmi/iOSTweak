@@ -132,6 +132,7 @@ Next sample of code will show a message on each of application loaded.
 %end
 ```
 You can choose one of this and paste to Tweak.xm file.
+
 8) Execute the following command
 ```
 make clean
