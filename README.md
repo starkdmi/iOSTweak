@@ -1,7 +1,3 @@
-- Добавить код приложения (Tweak.xm)
-- Добавить снимки экрана из айфона
-
-
 # Writing iOS tweak on Windows using Theos
 
 First of all you need an Ubuntu emulator. You can download it from Microsoft Store by this [link](https://www.microsoft.com/store/productId/9NBLGGH4MSV6).
@@ -135,10 +131,7 @@ Next sample of code will show a message on each of application loaded.
 }
 %end
 ```
-
-
-
-
+You can choose one of this and paste to Tweak.xm file.
 8) Execute the following command
 ```
 make clean
