@@ -1,5 +1,4 @@
 - Добавить код приложения (Tweak.xm)
-- Выложить все файлы приложения
 - Добавить снимки экрана из айфона
 
 
@@ -99,31 +98,72 @@ tweakname_FRAMEWORKS = UIKit
 ![](temp/8.jpg?raw=true "Frameworks") 
 --->
 
-7) Execute the following command
+
+7) Now is time for writing our application. We'll use an Objective C language. This code will every phone restart say to you "hello" message.
+```
+%hook SpringBoard
+-(void)applicationDidFinishLaunching:(id)application 
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome" 
+        message:@"Welcome to your iPhone starkov79!" 
+        delegate:nil 
+        cancelButtonTitle:@"Thanks" 
+        otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+
+	%orig;
+}
+%end
+```
+Next sample of code will show a message on each of application loaded.
+```
+#import <UIKit/UIKit.h>
+
+%hook SBApplicationIcon
+-(void)launch
+{
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello" 
+		message:@"Hello World" 
+		delegate:self 
+		cancelButtonTitle:@"Good Bye" 
+		otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    
+	%orig;
+}
+%end
+```
+
+
+
+
+8) Execute the following command
 ```
 make clean
 ```
-8) Build our tweak
+9) Build our tweak
 ```
 sudo make package
 ```
-9) Now we can found .deb file in /packages folder. Transfer it to your device to /var/root folder. You can use [3uTools](http://www.3u.com/)
-10) Now we need to launch mobile terminal
-11) Execute the following command. Login is "root", password is "alpine"
+10) Now we can found .deb file in /packages folder. Transfer it to your device to /var/root folder. You can use [3uTools](http://www.3u.com/)
+11) Now we need to launch mobile terminal
+12) Execute the following command. Login is "root", password is "alpine"
 ```
 login
 ```
-12) Install a package on your device. "filename" is your .deb file name
+13) Install a package on your device. "filename" is your .deb file name
 ```
 dpkg -i filename.deb
 ```
-13) Open one more window in terminal and execute (if you missed it in paragraph 6)
+14) Open one more window in terminal and execute (if you missed it in paragraph 6)
 ```
 uicache
 ```
-14) Go back to the previous window and on behalf of the superuser run
+15) Go back to the previous window and on behalf of the superuser run
 ```
 reboot
 ```
 
-All Done.
+All is Done.
