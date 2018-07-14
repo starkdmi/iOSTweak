@@ -1,0 +1,9 @@
+Package: com.starkov79.tweak3
+Name: tweak3
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: starkov79
+Author: starkov79
+Section: Tweaks
